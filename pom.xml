@@ -16,15 +16,6 @@
 
     <properties>
             <sonar.language>java</sonar.language>
-            <java.version>1.8</java.version>
-            <sonar.language>java</sonar.language>
-            <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
-            <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
-            <sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
-            <sonar.jacoco.reportsPaths>${project.build.directory}/jacoco-ut.exec</sonar.jacoco.reportsPaths>
-            <sonar.tests>src/test/java</sonar.tests>
-            <sonar.projectKey>sonar-test</sonar.projectKey>
-            <sonar.host.url>http://192.168.55.106:9000</sonar.host.url>
     </properties>
 
     <dependencies>
@@ -38,7 +29,6 @@
                         <version>4.13.1</version>
                         <scope>test</scope>
                     </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -67,57 +57,23 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.1</version>
+                <version>0.8.2</version>
                 <executions>
                     <execution>
-                        <id>default-prepare-agent</id>
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
-                        <configuration>
-                            <destFile>${project.build.directory}/jacoco-ut.exec</destFile>
-                        </configuration>
                     </execution>
+                    <!-- attached to Maven test phase -->
                     <execution>
-                        <id>default-report</id>
+                        <id>report</id>
+                        <phase>test</phase>
                         <goals>
                             <goal>report</goal>
                         </goals>
-                        <configuration>
-                            <dataFile>${project.build.directory}/jacoco-ut.exec</dataFile>
-                            <outputEncoding>UTF-8</outputEncoding>
-                            <outputDirectory>${project.build.directory}</outputDirectory>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>default-check</id>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                        <configuration>
-                            <dataFile>${project.build.directory}/jacoco-ut.exec</dataFile>
-                            <rules>
-                                <rule>
-                                <element>BUNDLE</element>
-                                    <limits>
-                                        <limit>
-                                            <counter>INSTRUCTION</counter>
-                                            <value>COVEREDRATIO</value>
-                                            <minimum>0.80</minimum>
-                                        </limit>
-                                    </limits>
-                                </rule>
-                            </rules>
-                        </configuration>
                     </execution>
                 </executions>
-                <configuration>
-                    <excludes>
-                        <exclude>com/eldisol/jacoboot/JacobootApplication.class</exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
+	        </plugin>        
         </plugins>
     </build>
-
 </project>
