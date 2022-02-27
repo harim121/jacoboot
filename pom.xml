@@ -15,16 +15,18 @@
     <description>Simple project for Spring Boot 2.2.4.RELEASE, Jacoco and Junit 5</description>
 
     <properties>
-    <sonar.language>java</sonar.language>
-    <java.version>1.8</java.version>
-    <sonar.language>java</sonar.language>
-    <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
-    <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
-    <sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
-    <sonar.jacoco.reportsPaths>target/jacoco.exec</sonar.jacoco.reportsPaths>
-    <sonar.tests>src/test/java</sonar.tests>
-    <sonar.projectKey>sonar-test</sonar.projectKey>
-    <sonar.host.url>http://192.168.55.106:9000</sonar.host.url>
+    	<sonar.language>java</sonar.language>
+    	<java.version>1.8</java.version>
+	<sonar.java.binaries>target/classes</sonar.java.binaries>
+	<sonar.sources>src/main</sonar.sources>
+	<sonar.tests>src/test</sonar.tests>
+	<sonar.exclusions>**/beans/*,**/config/*,**/constants/*,**/dtos/**,**/entity/*,**/exceptions/*,**/insights/*,**/App.java</sonar.exclusions>
+	<sonar.sourceEncoding>UTF-8</sonar.sourceEncoding>
+	<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+	<sonar.junit.reportsPath>target/surefire-reports</sonar.junit.reportsPath>
+	<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+    	<sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+    	<sonar.host.url>http://192.168.55.106:9000</sonar.host.url>
     </properties>
 
     <dependencies>
