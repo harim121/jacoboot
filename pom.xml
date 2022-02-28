@@ -26,7 +26,7 @@
 	<sonar.junit.reportsPath>target/surefire-reports</sonar.junit.reportsPath>
 	<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
     	<sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
-    	<sonar.host.url>http://192.168.55.106:9000</sonar.host.url>
+    	<sonar.host.url>http://192.168.55.111:9000</sonar.host.url>
     </properties>
 
     <dependencies>
