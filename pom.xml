@@ -19,7 +19,7 @@
     	<java.version>1.8</java.version>
 	<sonar.java.binaries>target/classes</sonar.java.binaries>
 	<sonar.sources>src/main</sonar.sources>
-	<sonar.tests>src/test</sonar.tests>
+	<sonar.tests>src/test/java/com/eldisol/jacoboot</sonar.tests>
 	<sonar.exclusions>**/beans/*,**/config/*,**/constants/*,**/dtos/**,**/entity/*,**/exceptions/*,**/insights/*,**/App.java</sonar.exclusions>
 	<sonar.sourceEncoding>UTF-8</sonar.sourceEncoding>
 	<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
